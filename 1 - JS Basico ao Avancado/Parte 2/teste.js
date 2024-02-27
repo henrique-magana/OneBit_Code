@@ -8,15 +8,22 @@ const personagens = [
   { nivel: 29, nome: "Muradin", raca: "Anão", classe: "Guerreiro" },
 ]
 
-Map
+
 // map: permite obter um novo array a partir de um array existenste
 const nomes = personagens.map(function (personagem) {
   return personagem.nome
 })
+
+console.log(nomes)
 //Filter
 
 
 // filter: permite obter um novo array contendo apenas elementos específicos de um array existente
+const orcs = personagens.filter(function (personagem) {
+    return personagem.raca === "Orc"
+  })
+
+console.log(orcs)
 
 //Reduce
 
@@ -25,6 +32,8 @@ const nomes = personagens.map(function (personagem) {
 const nivelTotal = personagens.reduce(function (acumulador, personagem) {
   return acumulador + personagem.nivel
 }, 0)
+
+console.log(nivelTotal)
 
 const racas = personagens.reduce(function (acumulador, personagem) {
   if (acumulador[personagem.raca]) {
@@ -35,9 +44,13 @@ const racas = personagens.reduce(function (acumulador, personagem) {
   return acumulador
 }, {})
 
+console.log(racas)
+
 
 //Sort
 // sort: ordena os elementos de um array a partir de comparações entre duplas de elementos
-personagens.sort(function (a, b) {
+const novaOrdem = personagens.sort(function (a, b) {
   return a.nivel - b.nivel
 })
+
+console.log(novaOrdem)

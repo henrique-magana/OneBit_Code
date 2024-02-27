@@ -27,10 +27,12 @@ function listarVagas(){
         alert("Sem vagas no momento")
     }else{
         const vagasCadastradas = vagas.map(function(vaga){
-            return vaga.nome + " e a quantidade de candidatos = " + vaga.quantidade
+            return vaga.nome + " e a quantidade de candidatos = " + vaga.quantidadeInscritos
         })
 
-        console.log(vagasCadastradas)
+        for(let i = 0;i < vagas.length;i++){
+            console.log("Indice " + i +" e "+ vagasCadastradas[i])
+        }
     }
 }
 
@@ -39,6 +41,7 @@ function criarVaga(){
         nome: "",
         descricao: "",
         dataLimite: "",
+        quantidadeInscritos: 0
     }
 
     let nome = prompt("Digite o nome da vaga ")
@@ -49,5 +52,16 @@ function criarVaga(){
     vaga.descricao = descricao
     vaga.dataLimite = dataLimite
 
-    vagas.push(vaga)
+
+    let enviar = prompt("Confirmar envio?")
+
+    if(enviar == "sim"){
+        vagas.push(vaga)
+    }else{
+        return "Nao salvo"
+    }
+}
+
+function vizualizarVaga(){
+    let 
 }
